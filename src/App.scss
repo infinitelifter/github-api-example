@@ -1,0 +1,10 @@
+@import "./utils/styles/colors";
+
+.App-container {
+  background-color: $darkgray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}

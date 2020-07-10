@@ -1,0 +1,39 @@
+@import "../../utils/styles/colors";
+
+.table {
+  width: 600px;
+  text-align: left;
+  margin: 25px;
+  border: 1px solid $gray;
+  border-radius: 8px;
+  overflow: hidden;
+  &__header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    border-bottom: solid 1px $gray;
+    color: $white;
+    cursor: pointer;
+  }
+  &__row {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    background: $white;
+    box-sizing: border-box;
+    color: $darkgray;
+    &__odd {
+      background: $gray;
+    }
+  }
+}
+
+.input-container {
+  margin: 50px 10px 25px 10px;
+}

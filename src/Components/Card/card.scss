@@ -1,0 +1,154 @@
+@import "../../utils/styles/colors";
+
+.card {
+  position: relative;
+  width: 360px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+  background: #151515;
+  overflow: hidden;
+  &__top {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 400px;
+    height: 100px;
+    background: $primary;
+    animation: dsTop 1.5s;
+  }
+  &__avatar {
+    position: absolute;
+    margin: auto;
+    top: 40px;
+    right: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000,
+      inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000;
+    background: #000000;
+    overflow: hidden;
+    animation: mvTop 1.5s;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      line-height: 115px;
+      text-align: center;
+    }
+  }
+  &__name {
+    position: absolute;
+    margin: auto;
+    top: -60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      &:hover {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+  }
+  &__bio {
+    margin-top: 260px;
+    height: 100px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    padding: 5px 25px;
+    font-size: 14px;
+  }
+  &__repos {
+    text-align: center;
+    height: 40px;
+    font-size: 13px;
+    h6 {
+      font-weight: 700;
+      text-transform: uppercase;
+      animation: fadeIn 2s ease-in;
+      font-size: 0.87em;
+      color: #11998e;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes htmlSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+@keyframes cssSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes jsSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes mvBottom {
+  0% {
+    bottom: -150px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+@keyframes mvTop {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 40px;
+  }
+}
+
+@keyframes dsTop {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.following {
+  color: white;
+  background: $primary;
+}
