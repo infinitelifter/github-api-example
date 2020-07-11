@@ -5,6 +5,8 @@ import Input from "../../Components/Input/Input";
 import "./repoList.scss";
 import { isOdd } from "../../utils/helpers";
 import Arrow from "../../Components/Arrow/Arrow";
+import { useUserDataContext } from "../../utils/Context/ContextManager";
+import { arraysAreEqual } from "../../utils/helpers";
 const classNames = require("classnames/bind");
 
 export default function RepoList(props) {
@@ -16,7 +18,11 @@ export default function RepoList(props) {
 
   const [isLoaderActive, setIsLoaderActive] = useState(false);
 
+  const context = useUserDataContext();
+
   useEffect(() => {
+    context.updateValue("userName", props.match.params.userName);
+
     const fetchData = async () => {
       setIsLoaderActive(true);
 
@@ -48,10 +54,6 @@ export default function RepoList(props) {
     setFilteringInput(event.target.value);
   };
 
-  // const handleSort = () => {
-  //   setFilteringInput(event.target.value);
-  // };
-
   return (
     <React.Fragment>
       <div className="input-container">
@@ -71,7 +73,6 @@ export default function RepoList(props) {
               className="table__header"
               onClick={(e) => {
                 e.preventDefault();
-                console.log(sortedDescending);
                 setSortedDescending(!sortedDescending);
               }}
             >
@@ -97,7 +98,9 @@ export default function RepoList(props) {
                 ))
             ) : (
               <div className="table__row">
-                User doesnt have any repositories
+                {arraysAreEqual(data, filtered)
+                  ? "User doesnt have any repositories"
+                  : "Repository doesnt exist. Try searching different name."}
               </div>
             )}
           </div>

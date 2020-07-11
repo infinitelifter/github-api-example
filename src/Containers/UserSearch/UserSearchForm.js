@@ -16,8 +16,6 @@ const UserSearchForm = (props) => {
     handleBlur,
     handleSubmit,
   } = props;
-
-  console.log("values", values);
   return (
     <form onSubmit={handleSubmit} className="form">
       <Input
@@ -67,14 +65,12 @@ const UserSearchEnhancedForm = (props) => {
 
             context.updateValue("userDetail", userWithRepos);
             context.updateValue("userName", values.name);
-            console.log("res", userWithRepos);
           })
         )
         .catch((err) => {
           setIsLoaderActive(false);
           setUserNotFound(true);
           context.updateValue("userName", null);
-          console.log(err);
         });
     },
 

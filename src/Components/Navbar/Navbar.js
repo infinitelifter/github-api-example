@@ -8,17 +8,25 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <NavLink exact to="/" activeClassName="selected" className="navbar__item">
-        Fetch user
-      </NavLink>
       {context.userName && (
-        <NavLink
-          to="/:userName"
-          activeClassName="selected"
-          className="navbar__item"
-        >
-          Repositories
-        </NavLink>
+        <React.Fragment>
+          <NavLink
+            exact
+            to="/"
+            activeClassName="selected"
+            className="navbar__item"
+          >
+            Fetch user
+          </NavLink>
+
+          <NavLink
+            to={`/${context.userName}`}
+            activeClassName="selected"
+            className="navbar__item"
+          >
+            Repositories
+          </NavLink>
+        </React.Fragment>
       )}
     </div>
   );
