@@ -88,6 +88,7 @@ export default function RepoList(props) {
                 })
                 .map((repo, index) => (
                   <div
+                    key={repo.id}
                     className={classNames({
                       table__row: true,
                       table__row__odd: isOdd(index),

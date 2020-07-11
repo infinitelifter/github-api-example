@@ -40,7 +40,9 @@ const UserSearchEnhancedForm = (props) => {
   const context = useUserDataContext();
 
   const CreateForm = withFormik({
-    mapPropsToValues: () => ({ name: "" }),
+    mapPropsToValues: () => ({
+      name: context.userName ? context.userName : "",
+    }),
 
     validationSchema: Yup.object().shape({
       name: Yup.string().required(),

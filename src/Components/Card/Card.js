@@ -10,11 +10,7 @@ export default function Card({ name, avatar, login, bio, repos }) {
         <div className="card__avatar">
           <img src={avatar} alt="No Avatar" />
         </div>
-        <div className="card__name">
-          <Link to={`/${login}`} className="card__link">
-            {name ? name : login}
-          </Link>
-        </div>
+        <div className="card__name">{name ? name : login}</div>
         <div className="card__bio">{bio}</div>
         <div className="card__repos">
           <h6>Repository list</h6>

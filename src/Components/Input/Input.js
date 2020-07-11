@@ -1,7 +1,13 @@
 import React from "react";
 import "./input.scss";
 
-export default function Input({ placeholder, name, handleChange, handleBlur }) {
+export default function Input({
+  value,
+  placeholder,
+  name,
+  handleChange,
+  handleBlur,
+}) {
   return (
     <div className="form__group field">
       <input
@@ -10,9 +16,9 @@ export default function Input({ placeholder, name, handleChange, handleBlur }) {
         placeholder={placeholder}
         name={name}
         id={name}
-        required
         onChange={handleChange}
         onBlur={handleBlur}
+        value={value}
       />
       <label htmlFor={name} className="form__label">
         {placeholder}
